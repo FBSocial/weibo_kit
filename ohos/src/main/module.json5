@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "weibo_kit",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}

@@ -127,18 +127,19 @@ class MethodChannelWeiboKit extends WeiboKitPlatform {
     bool clientOnly = false,
   }) {
     assert(text == null || text.length <= 1024);
-    assert(imageUris.isNotEmpty &&
-        imageUris.every((Uri element) => element.isScheme('file')) &&
-        imageUris
-                .map((Uri element) => File.fromUri(element).lengthSync())
-                .reduce((int value, int element) => value + element) <=
-            30 * 1024 * 1024);
+    // assert(imageUris.isNotEmpty &&
+    //     imageUris.every((Uri element) => element.isScheme('file')) &&
+    //     imageUris
+    //             .map((Uri element) => File.fromUri(element).lengthSync())
+    //             .reduce((int value, int element) => value + element) <=
+    //         30 * 1024 * 1024);
+    final List<String> uriList =
+        imageUris.map((Uri element) => element.toString()).toList();
     return methodChannel.invokeMethod<void>(
       'shareMultiImage',
       <String, dynamic>{
         if (text != null && text.isNotEmpty) 'text': text,
-        'imageUris':
-            imageUris.map((Uri element) => element.toString()).toList(),
+        'imageUris': uriList,
         'clientOnly': clientOnly,
       },
     );

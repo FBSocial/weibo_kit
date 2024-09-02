@@ -1,0 +1,12 @@
+{
+  "name": "weibo_kit",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@ohos/flutter_ohos": "file:./har/flutter.har",
+    "core": "file:har/weibo_core.har"
+  }
+}

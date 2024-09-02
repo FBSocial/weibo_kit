@@ -43,6 +43,9 @@ flutter:
       android:
         package: io.github.v7lin.weibo_kit
         pluginClass: WeiboKitPlugin
+      ohos:
+        package: v7lin.github.io/weibo_kit
+        pluginClass: WeiboKitPlugin
       ios:
         pluginClass: WeiboKitPlugin
 
